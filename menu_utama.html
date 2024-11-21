@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Utama</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
+    <style>
+        .card {
+            transition: transform 0.3s ease-in-out;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <header class="bg-primary text-white py-3">
+        <div class="container">
+            <h1 class="text-center">Selamat Datang di Menu Utama</h1>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        <div class="row">
+            <!-- Profil -->
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-lg">
+                    <div class="card-body text-center">
+                        <div class="icon text-primary">
+                            <i class="bi bi-person-circle"></i>
+                        </div>
+                        <h5 class="card-title">Profil</h5>
+                        <p class="card-text">Pelajari lebih lanjut tentang visi, misi, dan tim kami.</p>
+                        <a href="profil.html" class="btn btn-primary">Lihat Profil</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Layanan -->
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-lg">
+                    <div class="card-body text-center">
+                        <div class="icon text-success">
+                            <i class="bi bi-briefcase"></i>
+                        </div>
+                        <h5 class="card-title">Layanan</h5>
+                        <p class="card-text">Temukan solusi terbaik untuk kebutuhan teknologi Anda.</p>
+                        <a href="layanan.html" class="btn btn-success">Lihat Layanan</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Logout Button -->
+        <div class="d-flex justify-content-center">
+            <button onclick="logout()" class="btn btn-danger btn-lg">Logout</button>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-3">
+        © 2024 MyTech | Hak Cipta Dilindungi.
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Fungsi logout
+        function logout() {
+            localStorage.removeItem("loggedIn");
+            window.location.href = "index.html";
+        }
+
+        // Cek login
+        window.onload = function() {
+            const isLoggedIn = localStorage.getItem("loggedIn");
+            if (!isLoggedIn) {
+                window.location.href = "login.html";
+            }
+        }
+    </script>
+</body>
+</html>
